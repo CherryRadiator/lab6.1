@@ -40,10 +40,12 @@ int main() {
   
   std::cout << "Entere surname of person you're looking for: ";
   std::string point;
+  std::cin.clear();
+  std::cin.ignore(1000, '\n');
   getline(std::cin, point);
   int indexOfFoundPerson = seekBySurname(notePointers, numberOfNotes, point);
   if(indexOfFoundPerson != -1) {
-    std::cout << giveData(notes[indexOfFoundPerson]);
+    std::cout << "Person that you're looking for: " << giveData(notes[indexOfFoundPerson]) << std::endl;
   } else {
     std::cout << "Person with this surname not found" << std::endl;
   }
